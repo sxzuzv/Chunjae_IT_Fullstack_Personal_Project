@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!-- 웹 페이지의 주 언어를 한국어로 설정한다. -->
+<html lang="Korea">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First LONDON</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- 외부 스타일 시트 방식으로 웹 페이지에 CSS를 적용한다. -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- /*-- 헤더 영역 시작 -- */ -->
+    <header class="active">  
+
+        <!-- <div> : 전체 프로젝트의 기준 너비(보통 1140px)를 유지하기 위한 래퍼(wrapper) 역할을 한다. -->
+        <div class="container"> <!-- HTML 구조의 핵심인 container 클래스가 포함된 <div> -->
+            <h1>
+                <!-- animation-scroll, target 속성 지정 -->
+                <button data-animation-scroll="true" data-target="#main">trip to LONDON</button>
+            </h1>
+            <nav>
+                <ul>
+                    <!-- button 태그의 텍스트 : Introduce, Features, Gallery, Contact -->
+                    <li>
+                        <button data-animation-scroll="true" data-target="#about">Introduce</button>
+                    </li>
+                    <li>
+                        <button data-animation-scroll="true" data-target="#features">Features</button>
+                    </li>
+                    <li>
+                        <button data-animation-scroll="true" data-target="#portfolio">Gallery</button>
+                    </li>
+                    <li>
+                        <button data-animation-scroll="true" data-target="#contact">Contact</button>
+                    </li>
+                </ul>
+            </nav>
+        </div>       
+    </header>
+<!-- /*-- 헤더 영역 끝 -- */ -->
+
+<!-- 메인 -->
+
+<!-- 메인 영역은 시맨틱 태그(main) 으로 작성 -->
+<main id="main">
+    <div class="container">
+        <h2>LONDON, <span></span></h2>
+        <p>As one of the world's major global cities, London exerts a strong influence on its arts, entertainment, fashion, commerce and finance, education, health care, media, science and technology, tourism, transport, and communications.</p>
+        <button class="download">scroll to view details</button>
+        <button class="computer"><i class="fa-solid fa-mouse"></i></button>
+    </div>
+</main>
+<!-- 메인 영역 끝 -->
+
+<!-- Introduce  -->
+<section id="about" class="about">
+    <div class="container">
+        <div class="title">
+            <h4>My First LONDON</h4>
+            <h2>Introduce</h2>
+        </div>
+        <div class="about-self">
+            <div class="left">
+                <img src="./images/me_introduce.jpeg" alt="">
+            </div>
+            <div class="right">
+                <h3>Hello, <strong>I'm SOOJIN!</strong></h3>
+                <p>In June 2022, I went to London for the first time. <br>
+                    On this webpage, I would like to introduce my first trip to London for the first time. <br>
+                    If you have a chance, I would like to recommend a trip to London!</p>
+            <!-- instagram, youtube 아이콘 -->
+            <div class="social">
+                <a target="_blank" href="https://www.instagram.com/svxuxz/">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a target="_blank" href="https://youtu.be/hxI8SRpOfmo?si=p6mcotdADZl2SU36">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+<!-- About me 끝 -->
+
+<!-- What I DO -->
+<section id="features" class="do">
+<div class="container">
+        <div class="title">
+            <h4>Features</h4>
+            <h2>What I Do</h2>
+        </div>
+<!-- HTML5 -->
+    <div class="do-me">
+        <div class="do-inner">
+            <div class="icon">
+                <i class="fa-solid fa-camera-retro"></i>
+            </div>
+            <div class="content">
+                <h3>MEMORY</h3>
+                <p>I took a lot of pictures with London in the background. There are a lot of pictures that I like.</p>
+            </div>
+        </div>
+
+    <!-- CSS3 -->
+        <div class="do-inner">
+            <div class="icon">
+                <i class="fa-solid fa-user-group"></i>
+            </div>
+            <div class="content">
+                <h3>FRIENDSHIP</h3>
+                <p>I made unforgettable memories with my friends and became close.</p>
+            </div>
+        </div>
+    <!-- </div> -->
+
+    <!-- Java -->
+        <div class="do-inner">
+            <div class="icon">
+                <i class="fa-solid fa-burger"></i>
+            </div>
+            <div class="content">
+                <h3>TASTY</h3>
+                <p>I ate various foods that I couldn't eat in Korea. Fish and chips were also delicious.</p>
+            </div>
+        </div>
+
+        <!-- do-me 클래스로 묶기 -->
+    </div>
+</div>
+</section>
+<!-- What I DO 끝 -->
+
+<!-- 고정 배경 이미지 -->
+<div class="bg"></div>
+
+
+
+<!-- 포트폴리오 영역 -->
+<section id="portfolio" class="portfolio">
+    <div class="container">
+        <div class="title">
+            <h4>Gallery</h4>
+            <h2>Photo Dump</h2>
+        </div>
+
+        <div class="portfolio-me">
+            <div class="portfolio-inner">
+                <img src="./images/Big Ben.jpeg" alt="Big Ben">
+                <strong>PHOTO</strong>
+                <h3>Big Ben</h3>
+            </div>
+            <div class="portfolio-inner">
+                <img src="./images/St James's Park.jpeg" alt="St James's Park">
+                <strong>PHOTO</strong>
+                <h3>St James's Park</h3>
+            </div>
+            <div class="portfolio-inner">  
+                <img src="./images/Southwark Cathedral.jpeg" alt="Southwark Cathedral">
+                <strong>PHOTO</strong>
+                <h3>Southwark Cathedral</h3>
+            </div>                            
+         </div>
+      </div>
+    </div>
+</section>
+<!-- 포트폴리오 영역 끝 -->
+
+<!-- Contact With me -->
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="title">
+            <h4>CONTACT</h4>
+            <h2>Contact With Me</h2>
+        </div>
+
+        <div class="contact-me">
+            <div class="left">
+                <div class="card">
+                    <div class="icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <div class="info-text">
+                        <h3>PHONE</h3>
+                        <p>010-XXXX-XXXX</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="icon">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                    </div>
+                    <div class="info-text">
+                        <h3>EMAIL</h3>
+                        <p>pofoxz@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="icon">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <div class="info-text">
+                        <h3>ADDRESS</h3>
+                        <p>Gangbuk-gu, <br> Seoul, Republic of Korea</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right">
+                <form action="#">
+
+                    <div class="form-group">
+                        <label for="name">NAME</label>
+                        <input type="text" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">EMAIL</label>
+                        <input type="text" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="msg">MESSAGE</label>
+                        <!-- 여러줄 입력 요소 : textarea -->
+                        <textarea id="msg"></textarea>
+                    </div>
+                    <button type="submit">SEND</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact 끝 -->
+
+<script src="script.js"></script>
+</body>
+</html>

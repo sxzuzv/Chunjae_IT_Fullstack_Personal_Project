@@ -1,0 +1,671 @@
+/* 태그(<>) 사이의 '-'는 각 태그가 부모-자식 관계임을 의미한다. */
+
+/* 웹 페이지 글꼴을 Google Fonts의 'Song Myung'으로 설정한다. */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Song+Myung&display=swap');
+
+/* font-family: 'Nanum Myeongjo', serif;
+font-family: 'Song Myung', serif; */
+
+/* 반응형 - 기준이 되는 html(font-size) 속성값을 작게 하면 화면너비가 줄어 들수록
+    전체 텍스트 크기와 내외부 여백이 일정 비율로 줄어들음 */
+@media screen and (max-width:992px){
+    html{
+        font-size: 14px;
+    }
+
+/* 메인 영역 container 기준 너비 변경 */
+main .container{
+    width: 768px;
+}
+/* PortFolio 영역 본문 사각형 너비 변경 */
+section .portfolio-me .portfolio-inner{
+    width: 100%;
+}
+
+}
+
+@media screen and (max-width:768px){
+    html{
+        font-size: 13px;
+    }
+
+    /* 기준 너비 변경 */
+    main .container{
+        width:576px;
+    }
+
+    section .container{
+        width: 400px;
+    }
+    section .do-me .do-inner{
+        /* 48% -> 100% */
+        width:100%;
+        /* 외부 여백 초기화 */
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width:576px){
+    html{
+        font-size: 12px;
+    }
+
+    /* container클래스의 기준 너비 변경 */   
+    main .container{
+        width:400px;
+    }
+    section .container{
+        width:360px;
+    }
+}
+
+@media screen and (max-width:400px){
+    html{
+        font-size: 11px;
+    }
+
+    main .container{
+        width:320px;
+    }
+    section .container{
+        width: 320px;
+    }
+
+ /* font-size 작게 재설정 */
+    main h4{
+        font-size:1.5rem;
+    }
+    section .title h2{
+        /* 3.5 -> 3 */
+        font-size:3rem;
+    }
+}
+
+@media screen and (max-width:1140px){
+    /* 메인 영역 container 기준 너비 변경 */
+    main .container{
+        width:992px;
+    }
+    /* section - container 기준 너비 변경  */
+    section .container {
+        width:600px;
+    }
+
+    /* About Me 영역 왼쪽 너비 50% -> 100% 변경 */
+    section .about-self .left{
+        width:100%;
+        margin-bottom: 1.5rem;
+    }
+    /* About Me 영역 오른쪽 너비 50%-> 100% 변경 */
+    section .about-self .right{
+        width: 100%;
+        padding :0;
+    }
+
+    section .do-me .do-inner{
+        /* 본문 사각형 너비 -> 48%로 변경 */
+        width:48%; 
+        /* 본문 사각형 사이 간격 지정 */
+        margin-bottom: 1.5rem;
+        /* 외부 여백 초기화 */
+        margin-right:0;
+    }
+
+    section .do-me .do-inner:nth-child(2n+1){
+        /* 1,3,5..번째 본문 사각형에 margin-right:4% 적용 */
+        margin-right: 4%; 
+    }
+
+    section .portfolio-me .portfolio-inner{
+        /* 본문 사각형 너비 -> 48%로 변경 */
+        width:48%; 
+        /* 외부 여백 초기화 */
+        margin-right:0;
+    }
+
+    section .portfolio-me .portfolio-inner:nth-child(2n+1){
+        /* 1,3,5..번째 본문 사각형에 margin-right:4% 적용 */
+        margin-right: 4%; 
+    }
+
+    section.contact .contact-me .left{
+        /* 너비 변경 35 -> 100%  */
+        width: 100%;
+    }
+
+    section.contact .contact-me .right{
+        /* 너비 변경 65 -> 100% */
+        width:100%;
+        /* 외부 여백 초기화 */
+        margin-left:0;
+    }
+
+}
+
+
+/* 헤더 영역 스타일 초기화 시작  : 웹 브라우저의 기본 값 대신 정의한 값으로 CSS를 적용하기 위해 초기화를 진행한다. */
+
+/* 요소 전체에 대하여 스타일 적용 */
+*{
+    /* 요소 바깥 여백(위, 오른쪽, 아래, 왼쪽) : 0 */
+    margin:0;
+
+    /* 요소 내부 여백(위, 오른쪽, 아래, 왼쪽) : 0 */
+    padding:0;
+
+    /* 테두리(border-box)를 기준으로 요소의 박스 크기를 설정한다. */
+    box-sizing: border-box;
+
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Song Myung', serif;
+}
+
+/* <a>, <a> 방문 전, <a> 방문 후에 스타일 적용 */
+a, a:link, a:visited {
+    /* 요소 색상 : 부모로부터 상속 */
+    color:inherit;
+
+    /* 요소 선으로 꾸미기 : 없음 */
+    text-decoration: none;
+}
+
+/* <li>에 스타일 적용 */
+li {
+    list-style:none; /* 요소 리스트 스타일 : 없음 */
+}
+
+/* 헤더 영역 스타일 초기화 종료 */
+
+
+/* <--- 헤더 영역 스타일 적용 ---> */
+/* container 클래스에 스타일 적용 */
+.container{
+    /* 요소 가로 너비 : 1140px */
+    width:1140px;
+
+    /* 요소 외부 여백(위, 오른쪽, 아래, 왼쪽) : 0, auto, 0, auto => 요소가 수평 방향에서 중앙에 위치한다. */
+    margin: 0 auto;
+}
+
+/* <header>에 스타일 적용 */
+header{
+    /* 요소의 위치를 스크롤과 무관하게 상단에 고정한다. */
+    position : fixed;
+
+    /* 요소 텍스트 색상 : 흰색 */
+    color:white;
+
+    /* 요소의 상단 여백을 없앤다. */
+    top:0;
+
+    /* position 지정으로 인해 모든 요소의 속성값이 0인 상태이므로, z-index 속성을 변경하여 헤더 영역이 타 요소에 가려지지 않게 조정한다. */
+    z-index: 1;
+
+    /* 요소 가로 너비를 웹 페이지에 가득 차게 맞춘다. */
+    width: 100%;
+
+    /* 요소 내부 여백(위, 오른쪽, 아래, 왼쪽) : 1rem */
+    padding: 1rem;
+}
+
+/* 헤더 영역 메뉴 */
+header.active{
+    background-color: rgba(0,0,0);
+    animation:fadeIn 0.5s ease-in-out;
+}
+/* fadeIn : 투명도가 0에서 1로 1초간 변함 */
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* <--- 헤더 영역 메뉴 배치 스타일 적용 ---> */
+/* <header> 하위의 container 클래스에 스타일 적용 */
+header .container{
+    /* display 속성과 justify-content 속성을 지정하여 하위의 자식 태그 2개(<h1>, <nav>)를 각각 왼쪽, 오른쪽으로 배치한다. */
+    display:flex;
+    justify-content: space-between;
+
+    /* align-items 속성을 center로 지정하여 요소를 수직 정렬한다. */
+    align-items:center;
+
+    /* 요소 가로 너비를 웹 페이지에 가득 차게 맞춘다. */
+    width:100%;
+
+}
+
+/* <header>-<nav>-<ul>에 스타일 적용 */
+header nav ul{
+    display: flex;
+}
+
+/* 내부 여백, 글꼴 크기 지정 */
+header nav ul li{
+    padding: 10px;
+}
+
+header button {
+    background: transparent;
+    border:0;
+    cursor:pointer;
+}
+
+header h1 button {
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Song Myung', serif;
+    font-size:2rem;
+    color:white;
+    font-weight:bold;
+}
+
+header nav ul li button {
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Song Myung', serif;
+    font-size : 1.2rem;
+    color : white;
+}
+/*-- 헤더 영역 끝-- */
+
+
+/* 메인 영역 */
+
+main{
+    width:100%;
+    height:100vh;
+    color:white;
+    /* 배경이미지 경로 지정, linear-gradient() 함수 사용 시 배경색이 이미지를 덮음*/
+    background: linear-gradient(rgba(29, 29, 29, 0.8),rgba(29, 29, 29, 0.8)),url('./images/me_main.jpeg') center center;
+    /* 배경을 사용하는 요소 다 채우기 */
+    background-size: cover;
+    /* 수직방향에서 요소들이 중앙에 위치하도록 flex 지정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 텍스트 중앙 정렬 */
+    text-align:center;
+}
+
+/* 텍스트별로 크기와 margin 속성 지정 */
+main h4{
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Song Myung', serif;
+    font-size:2rem;
+}
+main h2{
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Song Myung', serif;
+    font-size:3.5rem;
+    margin:2rem 0;
+    /* 글자 사이의 간격 */
+    letter-spacing:3px;
+}
+main p{
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Song Myung', serif;
+    max-width:500px;
+    margin:0 auto;
+    font-size:1.25rem;
+}
+
+/* 버튼 꾸미기 */
+main button.download{
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Song Myung', serif;
+    /* 배경색 투명(transparent)지정 */
+    background-color: transparent;
+    /* 테두리 */
+    border:3px solid white;
+    /* 테두리를 둥글게 */
+    border-radius:20px;
+    /* 요소 내부와 외부에 간격주기 : padding, margin 속성 지정 */
+    padding:1rem 2rem;
+    margin-top:3rem;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+/* 아이콘 폰트로 추가한 컴퓨터 모양의 버튼에 스타일 속성 */
+main button.computer{
+    background-color: transparent;
+    border:none;
+    color:white;
+    font-size:2rem;
+    position:absolute;
+    bottom:1rem;
+    left:50%;
+    /* 요소 형태 변형 
+    translateX = 오른쪽으로 -> 음수 => 왼쪽
+    translateX(-50) => 왼쪽으로
+    translateY=아래쪽 <-> 음수 => 위쪽*/
+    transform: translateX(-50%);
+    /* 동적 효과 */
+    animation: upDown 1s ease-in-out infinite;
+    cursor: pointer;
+}
+/* @keyframes = 어떤 모양에서 어떤 모양으로 바꿀지 
+upDown = 애니메이션 이름 지정
+0% = 시작할 때 모양~ 100%= 끝날 때 모양*/
+@keyframes upDown{
+    0%{
+        bottom: 1rem;
+    }
+    50%{
+        bottom:1.5rem;
+    }
+    100%{
+        bottom:1rem
+    }
+}
+
+/* 텍스트 타이핑 효과 구현, 텍스트의 끝에 커서 모양 만들기 */
+
+/* ::after 가상 요소 선택자 */
+main h2 span::after{
+    content: "";
+    /* 너비 3px, 높이 40px 크기 */
+    height: 40px;
+    width: 3px;
+    background-color: #fff;
+    display: inline-block;
+    animation:blink .7s ease-in-out infinite;
+}
+@keyframes blink{
+    0%{
+        /* 요소 투명도 설정 (작을수록 투명해짐) */
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+/* 메인 영역 끝 */
+
+
+
+/*  About me  */
+section{
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Song Myung', serif;
+    /* 위 아래 여백 5rem 동일하게 지정 */
+    padding:5rem 0;
+}
+/* 짝수 번째 section 영역의 배경색을 회색계열 설정 */
+section:nth-child(2n){
+    background-color: #f8f8f8;
+}
+
+/* 섹션 영역 제목 설정 */
+section .title{
+    margin-bottom: 3rem;
+}
+section .title h4{
+    font-size:1.35rem;
+    color:indigo;
+    position: relative;
+}
+section .title h2{
+    font-size:3.5rem;
+}
+section .title p{
+    font-size: 3rem;
+}
+
+/* About me 본문 설정 */
+section .about-self::after{
+    content: "";
+    /* float 속성 해제 */
+    /* float 속성이 적용된 이후 요소 동작 조절 */
+    clear:both;
+    display: block;
+}
+/* 본문 너비 절방 지정, 왼쪽 배치 */
+section .about-self .left{
+    width:50%;
+    float : left;
+}
+
+/* 이미지 크기가 부모 영역 넘지 않도록 부모영역의 최대 크기로 설정 */
+section .about-self .left img{
+    max-width:100%;
+}
+
+/* 본문 너비 절반 지정+ 오른쪽배치 */
+section .about-self .right{
+    width:50%;
+    /* 왼쪽(left)에 부유하는 블록박스 생성 */
+    float:left;
+    padding:0 2rem;
+}
+
+/* 본문 오른쪽 h3 태그의 글자 크기와 여백 지정 */
+section .about-self .right h3{
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+/* 본문 오른쪽 h3 태그 strong 태그 생상 강조 */
+section .about-self .right h3 strong {
+    color:indigo;
+}
+/* 본문 오른쪽 p 태그 크기+여백지정 */
+section .about-self .right p{
+    font-size:1.15rem;
+    margin:1rem 0;
+}
+/* 본문 오른쪽의 아이콘 폰트 크기와 여백 지정 */
+section .about-self .right .social a {
+    font-size:2.5rem;
+    margin-right:0.2rem;
+}
+/* About me 끝 */
+
+
+
+
+/* What I DO */
+/* float 속성 해제 */
+section .do-me::after{
+    content: "";
+    /* block(혼자 한 줄 차지) */
+    display: block;
+    clear:both;
+}
+
+/* 사각형 크기, 간격, 내부 여백 설정 */
+section .do-me .do-inner{
+    background-color: #fff;
+    /* 전체 너비 30% x (사각형 3개) = 전체 너비 90% */
+    width: 30%;
+    padding:2rem;
+    float: left;
+    /* 첫, 두번째 사각형은 오른쪽에 너비의 5%씩 외부 여백 주기 (90+5+5=총 100% =>전체너비사용) */
+    margin-right:5%;
+    cursor:pointer;
+}
+
+/* 마지막 사각형 외부 여백 설정 */
+section .do-me .do-inner:last-child{
+    margin-right:0;
+}
+
+/* 아이콘 폰트 크기, 색상 */
+section .do-me .do-inner .icon i{
+    font-size:2.5rem;
+    color:indigo;
+}
+/* HTML5..Java 텍스트 크기, 간격 */
+section .do-me .do-inner .content h3{
+    font-size:2rem;
+    margin:1rem 0;
+}
+/* 사각형 텍스트 크기 */
+section .do-me .do-inner .content p{
+    font-size: 1.15rem;
+}
+/* do-inner 클래스에 마우스 올리면 배경색, 텍스트 색상 변경 */
+section .do-me .do-inner:hover{
+    background-color:ivory;
+    color:black;
+}
+/* 아이콘 폰트 색상 변경 */
+section .do-me .do-inner:hover i {
+    color:darkred;
+}
+
+/* What I DO 끝*/
+
+/* 배경에 이미지 고정 */
+.bg{
+    background: url('./images/scroll.jpeg') center center;
+    /* 배경 이미지의 가로, 세로 (cover=배경을 사용하는 요소를 다 채우기 위해
+    이미지 확대&축소, 가로 세로 비율 유지) */
+    background-size: cover;
+    /* 배경 이미지의 스크롤 여부 (fixed=고정) */
+    background-attachment: fixed;
+    height:650px;
+}
+
+/* 포트폴리오 영역 */
+
+/* clear 속성으로 float 속성값 해제 */
+section.portfolio::after{
+    content:"";
+    display:block;
+    clear:both;
+}
+/* portfolio-inner 사각형 꾸미기 */
+ section.portfolio .portfolio-inner{
+    width:30%;
+    margin-right: 5%;
+    padding:1rem 1rem 1rem 1rem;
+    float:left;
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    margin-bottom:3rem;
+ }
+
+ section.portfolio .portfolio-inner:nth-child(3){
+    margin-right : 0;
+ }
+
+ /* 사각형에 넣을 이미지와 텍스트 크기, 여백 지정 */
+
+ /* 이미지 크기가 부모 요소를 넘지 않도록 100%로 설정 */
+ section.portfolio .portfolio-inner img{
+    width:100%;
+    display: block;
+ }
+
+ /* strong 태그 색상과 간격 */
+ section.portfolio .portfolio-inner strong{
+    color:indigo;
+    margin:0.5rem 0;
+    display: block;
+ }
+ /* h3 태그 색상과 간격 */
+ section.portfolio .portfolio-inner h3{
+    font-size:1.75rem;
+ }
+
+
+
+/* Contact With me */
+/* 왼쪽 너비 30%, 오른쪽 너비 65%, 나머지는 margin-left 속성값으로 */
+
+section.contact .contact-me::after{
+    content:"";
+    display: block;
+    clear:both;
+}
+section.contact .contact-me .left{
+    width:30%;
+    float:left;
+}
+section.contact .contact-me .right{
+    float:left;
+    width: 65%;
+    margin-left:5%;
+}
+
+/* 왼쪽 스타일  */
+
+section.contact .contact-me .left .card{
+    border:1px solid #ccc;
+    padding:1rem;
+    /* 가로 한 줄 배치 */
+    display: flex;
+    /* 수직방향으로 중앙에 위치하기 */
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+/* 왼쪽에 있는 아이콘 폰트 적정 너비 지정 */
+section.contact .contact-me .left .card .icon i{
+    font-size:2rem;
+    margin-right: 15px;
+}
+
+/* 오른쪽 스타일 */
+section.contact .contact-me .right{
+    float:left;
+    width:65%;
+    margin-left: 5%;
+    margin-bottom: 2rem;
+    border:1px solid #ccc;
+    padding:1rem;
+}
+
+/* 폼 요소 */
+/* form-group 사이 간격 지정 */
+section.contact .contact-me .right .form-group{
+    margin-bottom: 1.25rem;
+}
+/* 외부 여백 적용 위해 block */
+section.contact .contact-me .right .form-group label{
+    display: block;
+    margin-bottom: 0.85rem;
+}
+
+/* input 꾸미기 */
+section.contact .contact-me .right .form-group input{
+    padding:0.625rem;
+    width:100%;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+/* :focus 가상 클래스 선택자로 입력 요소에 커서가 활성화 되면
+    파란테두리+그림자 효과 추가 */
+section.contact .contact-me .right .form-group input:focus{
+    border:1px solid #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+}
+/* textarea 꾸미기 */
+section.contact .contact-me .right .form-group textarea{
+    height:300px;
+    width: 100%;
+    resize:none;
+    border:1px solid #ccc;
+    border-radius: 10px;
+}
+/* textarea 커서 활성화 되면 파란색 테두리+그림자 효과 추가 */
+section.contact .contact-me .right .form-group textarea:focus{
+    outline: none;
+    border:1px solid #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+}
+/* 버튼 요소 꾸미기 */
+section.contact .contact-me .right button{
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Song Myung', serif;
+    width: 100%;
+    padding:1rem;
+    background-color:indigo;
+    border:none;
+    color:white;
+    font-size: 20px;
+    
+}
