@@ -5,8 +5,8 @@
     <groupId>kr.co</groupId>
     <!-- artifactId = 배포판 ID -->
     <!-- 배포판 및 프로젝트 이름 확인 후 변경 필요할 시 변경 -->
-    <artifactId>Book_Market</artifactId>
-    <name>Book_Market</name>
+    <artifactId>springsecuritytest</artifactId>
+    <name>springsecuritytest</name>
     <packaging>war</packaging>
     <version>1.0.0-BUILD-SNAPSHOT</version>
     <properties>
