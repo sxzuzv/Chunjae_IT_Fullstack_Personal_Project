@@ -1,6 +1,7 @@
 package com.springmvc.controller;
 
 import com.springmvc.domain.Book;
+import com.springmvc.exception.CategoryException;
 import com.springmvc.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -54,9 +55,12 @@ public class BookController {
     public String requestBooksByCategory(@PathVariable("category") String bookCategory, Model model) {
         //bookCategory와 일치하는 도서 목록을 서비스 객체에서 가져와 booksByCategory에 저장
         List<Book> booksByCategory = bookService.getBookListByCategory(bookCategory);
-//        if (booksByCategory == null || booksByCategory.isEmpty()) {
-//            throw new CategoryException();
-//        }
+
+        // 존재하지 않는 도서 분야(category)를 요청하는 경우에 대한 예외 처리 내용을 추가한다.
+        if (booksByCategory == null || booksByCategory.isEmpty()) {
+            throw new CategoryException();
+        }
+
         // 키 이름 : 북 리스트 ,
         model.addAttribute("bookList", booksByCategory); // 값을 모델 속성 booklist에 저장 후 출력
         return "books"; // books.jsp
@@ -83,9 +87,9 @@ public class BookController {
      } 기존에서 아래로 수정*/
     @GetMapping("/add")
     public String requestAddBookForm(@ModelAttribute("NewBook") Book book) {
-
         return "addBook";
     }
+
     @PostMapping("/add")
     public String submitAddNewBook(@ModelAttribute("NewBook") Book book) {
         // 이미지 등록을 위한 수정
@@ -104,6 +108,7 @@ public class BookController {
         bookService.setNewBook(book);
         return "redirect:/books";  // 웹 요청 URL을 강제로 /books로 이동시켜 매핑함.
     }
+
     @ModelAttribute // 메서드 수준의 @ModelAttribute 선언
     public void addAttribute(Model model) {
         // 모델 속성 addTitle에 신규 도서 등록을 저장함.
