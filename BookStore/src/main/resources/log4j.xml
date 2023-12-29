@@ -44,6 +44,21 @@
         </filter>
     </appender>
 
+    <!-- file 출력을 설정한다. (아래는 'monitor'와 주석 동일) -->
+    <appender name="audit" class="org.apache.log4j.RollingFileAppender">
+        <param name="append" value="false"/>
+        <param name="maxFileSize" value="10KB"/>
+        <param name="maxBackupIndex" value="5"/>
+        <param name="file" value="c:/logs/audit.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        </layout>
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <param name="LevelMin" value="warn"/>
+            <param name="LevelMax" value="warn"/>
+        </filter>
+    </appender>
+
     <!-- Application Loggers -->
     <!-- name 속성 : 실제 로그 기능을 수행하는 객체를 설정한다. -->
     <logger name="com.springmvc">
@@ -51,6 +66,8 @@
         <level value="info" />
         <!-- 파일 출력을 설정한다. -->
         <appender-ref ref="monitor"/>
+        <!-- 파일 출력을 설정한다. -->
+        <appender-ref ref="audit"/>
     </logger>
 
     <!-- 3rdparty Loggers -->

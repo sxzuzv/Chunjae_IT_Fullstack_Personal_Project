@@ -30,7 +30,7 @@
     </c:if>
     <form class="form-signin" action="<c:url value="/login"/>"    method="post">
         <div class="form-group row">
-            <input type="text" name="username" class="form-control" placeholder="User Name" required autofocus>
+            <input type="text" name="username" class="form-control" placeholder="UserName" required autofocus>
         </div>
         <div class="form-group row">
             <input type="password" name="password" class="form-control"  placeholder="Password" required>

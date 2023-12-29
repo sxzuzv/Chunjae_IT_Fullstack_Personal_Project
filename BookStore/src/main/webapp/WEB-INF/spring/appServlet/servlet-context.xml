@@ -28,6 +28,12 @@
                 class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <beans:property name="maxUploadSize" value="10240000" />
     </beans:bean>
+
+    <!-- 생성한 Interceptor 객체를 등록한다. -->
+    <interceptors>
+        <beans:bean class="com.springmvc.interceptor.MonitoringInterceptor" />
+        <beans:bean class="com.springmvc.interceptor.AuditingInterceptor" />
+    </interceptors>
     <!--<beans:property name="defaultEncoding" value="utf-8"/>
     <beans:property name="uploadTempDir" ref="uploadDirResource"/>-->
 
