@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <!-- 아래 경로를 제외하고 mybatis-config.xml의 내용은 같다. -->
+        <!-- 길이가 긴 경로의 경우, 별명을 붙여 간략하게 표기 가능하도록 typeAlias를 설정한다. -->
+        <typeAlias type="kr.co.chunjae.dto.BoardDTO" alias="board"></typeAlias>
+        <typeAlias type="kr.co.chunjae.dto.CommentDTO" alias="comment"></typeAlias>
+    </typeAliases>
+</configuration>
