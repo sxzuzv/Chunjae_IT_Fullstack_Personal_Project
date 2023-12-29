@@ -13,7 +13,9 @@
         <layout class="org.apache.log4j.PatternLayout">
             <!-- ConversionPattern으로 패턴을 설정하여 지정한 출력 형식이 되도록 지정한다. -->
             <!-- [형식] priority 출력 : package 출력 - 로그 내용 출력 개행문자(\n) 출력 -->
-            <param name="ConversionPattern" value="%-5p: %c - %m%n" />
+<!--            <param name="ConversionPattern" value="%-5p: %c - %m%n" />-->
+            <!-- 출력 형식을 아래와 같이 변경한다. -->
+            <param name="Conversionpattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
         </layout>
     </appender>
 
