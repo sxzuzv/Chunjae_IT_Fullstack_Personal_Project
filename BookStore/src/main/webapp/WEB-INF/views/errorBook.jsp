@@ -17,7 +17,7 @@
 <div class="jumbotron">
     <div class="container">
         <h2 class="alert alert-danger">
-            해당  도서가 존재하지 않습니다.<br>
+            해당 도서가 존재하지 않습니다.<br>
             도서 ID : ${invalidBookId}
         </h2>
     </div>
