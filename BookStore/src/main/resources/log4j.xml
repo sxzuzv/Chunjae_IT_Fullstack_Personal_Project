@@ -21,7 +21,7 @@
 
     <!-- Application Loggers -->
     <!-- name 속성 : 실제 로그 기능을 수행하는 객체를 설정한다. -->
-    <logger name="com.springmvc.controller">
+    <logger name="com.springmvc">
         <!-- 설정한 객체의 로깅 레벨을 info로 설정한다. -->
         <level value="info" />
     </logger>
