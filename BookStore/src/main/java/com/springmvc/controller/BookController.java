@@ -1,6 +1,7 @@
 package com.springmvc.controller;
 
 import com.springmvc.domain.Book;
+import com.springmvc.exception.BookIdException;
 import com.springmvc.exception.CategoryException;
 import com.springmvc.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.util.List;
 import java.util.Map;
@@ -121,15 +123,28 @@ public class BookController {
                 "publisher","category","unitsInStock","totalPages", "releaseDate", "condition", "bookImage");
     }
 
-//    @ExceptionHandler(value={BookIdException.class})
-//    public ModelAndView handleError(HttpServletRequest req, BookIdException exception) {
-//        ModelAndView mav = new ModelAndView();
-//        mav.addObject("invalidBookId", exception.getBookId());
-//        mav.addObject("exception", exception);
-//        mav.addObject("url", req.getRequestURL()+"?"+req.getQueryString());
-//        mav.setViewName("errorBook");
-//        return mav;
-//    }
+    // @ExceptionHandler를 설정한 메서드 handleError()
+    // @ExceptionHandler의 value 속성에 예외 클래스 BookIdException을 설정한다.
+    @ExceptionHandler(value={BookIdException.class})
+    public ModelAndView handleError(HttpServletRequest req, BookIdException exception) {
+        // ModelAndView 클래스의 mav 인스턴스를 생성한다.
+        ModelAndView mav = new ModelAndView();
+
+        // 모델 속성 invalidBookId에 요청한 도서 아이디 값을 저장한다.
+        mav.addObject("invalidBookId", exception.getBookId());
+
+        // 모델 속성 exception에 예외 처리 클래스 BookIdException을 저장한다.
+        mav.addObject("exception", exception);
+
+        // 모델 속성 url에 요청 URL과 요청 쿼리문을 저장한다.
+        mav.addObject("url", req.getRequestURL()+"?"+req.getQueryString());
+
+        // 뷰 이름으로 errorBook을 설정하고 errorBook.jsp 파일을 출력한다.
+        mav.setViewName("errorBook");
+
+        // ModelAndView 클래스의 mav 인스턴스를 반환한다.
+        return mav;
+    }
 
     @GetMapping("/logout")
     public String logout(Model model) {

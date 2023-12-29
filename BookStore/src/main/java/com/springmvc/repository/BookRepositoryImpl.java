@@ -1,6 +1,7 @@
 package com.springmvc.repository;
 
 import com.springmvc.domain.Book;
+import com.springmvc.exception.BookIdException;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
@@ -109,9 +110,13 @@ public class BookRepositoryImpl implements BookRepository {
                 break;
             }
         }
-//        if (bookInfo == null)
-//            //throw new IllegalArgumentException("도서 ID가 " + bookId + "인 해당 도서를 찾을 수 없습니다.");
-//            throw new BookIdException(bookId); // 예외처리 메시지 변경
+
+        // 도서 목록 중 존재하지 않는 도서 아이디를 요청하는 경우에 대한 예외 처리 코드를 추가한다.
+        if (bookInfo == null) {
+//            throw new IllegalArgumentException("도서 ID가 " + bookId + "인 해당 도서를 찾을 수 없습니다.");
+            // 검색한 도서 아이디(bookId)가 없는 경우, 예외 처리 클래스인 BookIdException을 호출한다.
+            throw new BookIdException(bookId);
+        }
 
         return bookInfo;
     }
