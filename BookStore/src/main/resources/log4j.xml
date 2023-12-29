@@ -19,11 +19,38 @@
         </layout>
     </appender>
 
+    <!-- 파일로 로그 기록 출력 -->
+    <!-- file 출력을 설정한다. -->
+    <appender name="monitor" class="org.apache.log4j.RollingCalendar">
+        <!-- 기존 로그 파일을 지우고 새로 생성한다. -->
+        <param name="append" value="false"/>
+        <!-- 파일 크기를 설정한다. (최댓값 10MB) -->
+        <param name="maxFileSize" value="10KB"/>
+        <!-- 생성할 백업 파일 수를 설정한다. (기본값 1) -->
+        <param name="maxBackupIndex" value="5"/>
+        <!-- 로그 파일 이름을 설정한다. -->
+        <param name="file" value="c:/logs/monitor.log"/>
+        <!-- 레이아웃을 설정한다. -->
+        <layout class="org.apache.log4j.PatternLayout">
+            <!-- 출력 형식을 설정한다. -->
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        </layout>
+        <!-- 로깅 레벨의 범위를 지정하는 클래스를 설정한다. -->
+        <filter class="org.apache.log4j.varia.LevelRangeFilter">
+            <!-- 로깅 레벨의 최하위 레벨을 설정한다. (info) -->
+            <param name="LevelMin" value="info"/>
+            <!-- 로깅 레벨의 최상위 레벨을 설정한다. (info) -->
+            <param name="LevelMax" value="info"/>
+        </filter>
+    </appender>
+
     <!-- Application Loggers -->
     <!-- name 속성 : 실제 로그 기능을 수행하는 객체를 설정한다. -->
     <logger name="com.springmvc">
         <!-- 설정한 객체의 로깅 레벨을 info로 설정한다. -->
         <level value="info" />
+        <!-- 파일 출력을 설정한다. -->
+        <appender-ref ref="monitor"/>
     </logger>
 
     <!-- 3rdparty Loggers -->
