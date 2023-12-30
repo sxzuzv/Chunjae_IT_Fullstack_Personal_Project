@@ -21,6 +21,8 @@ public class Book {
     // messages.properties 파일에 선언된 Pattern.NewBook.bookId 메시지를 출력한다.
     @Pattern(regexp = "ISBN[1-9]+")
 
+    // bookId 속성에 대해 사용자 정의 제약 사항의 애너테이션을 선언한다.
+    // 존재하는 도서 ID 유효성 검사 : 저장소 객체의 존재 여부에 대한 유효성 검사를 위해 사용자 정의 애너테이션 @BookId를 선언한다.
     @BookId
     private String bookId;            // 도서Id
 
