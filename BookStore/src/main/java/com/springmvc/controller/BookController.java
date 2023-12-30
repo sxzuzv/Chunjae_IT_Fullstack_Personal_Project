@@ -40,6 +40,7 @@ public class BookController {
         return "books"; // book을 반환하므로 book.jsp가 있어야함.
 
     }*/
+
     @GetMapping("/all")
     public ModelAndView requestAllBookList( ){
         ModelAndView modelAndView = new ModelAndView();
@@ -102,6 +103,7 @@ public class BookController {
 
         if (bookImage != null && !bookImage.isEmpty()) {
             try {
+                // 파일 업로드를 진행한다.
                 bookImage.transferTo(saveFile);
             } catch (Exception e) {
                 throw new RuntimeException("도서 이미지 업로드가 실패하였습니다", e);

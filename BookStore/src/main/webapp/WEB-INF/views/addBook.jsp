@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 control-label" >상세정보</label>
+                <label class="col-sm-2 control-label" >상세 정보</label>
                 <div class="col-sm-5">
                     <form:textarea  path="description" cols="50" rows="2" class="form-control"/>
                 </div>
@@ -79,7 +79,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-2 control-label" >재고수 </label>
+                <label class="col-sm-2 control-label" >재고 수</label>
                 <div class="col-sm-3">
                     <form:input path="unitsInStock" class="form-control"/>
                 </div>
