@@ -14,7 +14,7 @@ public @interface BookId { // 사용자 정의 애너테이션 @BookId
     // 필수 속성 message, groups, payload를 포함한다.
     // @BookId에 대한 유효성 검사 시, 오류가 발생하면
     // 메시지 리소스 파일(messages.properties)에 설정된 BookId.NewBook.bookId의 메시지를 출력한다.
-    String message() default "";
+    String message() default "{BookId.NewBook.bookId}";
     Class<?>[] groups() default {};
     Class<?>[] payload() default {};
 }
