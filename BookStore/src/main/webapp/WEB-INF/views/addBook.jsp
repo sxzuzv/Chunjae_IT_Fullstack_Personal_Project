@@ -34,12 +34,16 @@
                class="form-horizontal"
                enctype="multipart/form-data">
         <fieldset>
-                <%--컨트롤러에서 전달된 모델 속성 이름 addTitle 값을 출력--%>
+                <%-- 컨트롤러에서 전달된 모델 속성 이름 addTitle 값을 출력 --%>
             <legend>${addTitle}</legend>
             <div class="form-group row">
                 <label class="col-sm-2 control-label">도서 ID</label>
                 <div class="col-sm-3">
                     <form:input  path="bookId"  class="form-control"/>
+                </div>
+                <%-- 도서 ID에 대한 유효성 검사에서 에러 발생 시, 지정한 메시지를 출력한다. --%>
+                <div class="col-sm-6">
+                    <form:errors path="bookId" cssClass="text-danger" />
                 </div>
             </div>
             <div class="form-group row">
@@ -47,11 +51,19 @@
                 <div class="col-sm-3">
                     <form:input  path="name"  class="form-control"/>
                 </div>
+                <%-- 도서명에 대한 유효성 검사에서 에러 발생 시, 지정한 메시지를 출력한다. --%>
+                <div class="col-sm-6">
+                    <form:errors path="name" cssClass="text-danger" />
+                </div>
             </div>
             <div class="form-group row">
                 <label class="col-sm-2 control-label" >가격</label>
                 <div class="col-sm-3">
                     <form:input  path="unitPrice" class="form-control"/>
+                </div>
+                <%-- 도서 가격에 대한 유효성 검사에서 에러 발생 시, 지정한 메시지를 출력한다. --%>
+                <div class="col-sm-6">
+                    <form:errors path="unitPrice" cssClass="text-danger" />
                 </div>
             </div>
             <div class="form-group row">

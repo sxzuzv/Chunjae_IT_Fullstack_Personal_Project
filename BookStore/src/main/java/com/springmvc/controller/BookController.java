@@ -7,12 +7,14 @@ import com.springmvc.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.io.File;
 import java.util.List;
 import java.util.Map;
@@ -94,7 +96,16 @@ public class BookController {
     }
 
     @PostMapping("/add")
-    public String submitAddNewBook(@ModelAttribute("NewBook") Book book) {
+    // 커맨드 객체에 @Valid를 선언하고 오류 처리 내용을 추가한다.
+    public String submitAddNewBook(@Valid @ModelAttribute("NewBook") Book book,
+                                   BindingResult result) {
+        // submitAddNewBook() : 사용자의 입력 값을 커맨드 객체 NewBook으로 매핑할 때 유효성 검사가 진행된다.
+        // 유효성 결과 값은 BindingResult 타입의 result 객체에 담긴다.
+        if (result.hasErrors()) {
+            // 유효성 검사로 발생된 오류가 result 객체에 있을 시, 뷰 이름 addBook을 반환하여 addBook.jsp에 출력한다.
+            return "addBook";
+        }
+
         // 이미지 등록을 위한 수정
         MultipartFile bookImage = book.getBookImage();
 
